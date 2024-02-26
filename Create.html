@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Código</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-c">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+        <div class="shape-blob three"></div>
+        <div class="shape-blob four"></div>
+        <div class="shape-blob five"></div>
+        <div class="shape-blob six"></div>
+        <div class="shape-blob seven"></div>
+    </div>
+    
+    <div id="alert-container" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; z-index: 999;"></div>
+
+    <div id="output">
+        <h2><strong>Pagina de muestra:</strong></h2>
+        <video controls id="image">
+            <source src="img/Gift_portafolio.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <h1>Generador de Código</h1>
+        <form id="codeForm" class="styled-form">
+            <div class="form-group">
+                <label for="Name">Nombre:</label>
+                <input type="text" id="Name" name="Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="developer">Eres un Back, Front o Full developer:</label>
+                <select id="developer" name="developer" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Back-end Developer">Back-end Developer</option>
+                    <option value="Front-end Developer">Front-end Developer</option>
+                    <option value="Full-stack Developer">Full-stack Developer</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="description">Descripción de tu perfil:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="linkedin">Link de LinkedIn:</label>
+                <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/tuusuario" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="Github">Link de GitHub:</label>
+                <input id="Github" name="Github" type="url" placeholder="https://github.com/tuusuario" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="Youtube">Link de Youtube:</label>
+                <input id="Youtube" name="Youtube" type="url" placeholder="https://youtube.com/c/tuusuario" required>
+            </div>
+        
+            <button type="button" onclick="generateCode()">Generar Código</button>
+        </form>
+        
+
+        <hr>
+
+        <h2>Código Generado:</h2>
+        <div id="generatedCodeContainer">
+            <div id="generatedHTMLContainer">
+                <h3>HTML generado:</h3>
+                <button onclick="copyToClipboard('generatedHTML')">Copiar HTML</button>
+                <pre id="generatedHTML"></pre>
+            </div>
+        </div>
+        <div id="generatedCodeContainer">
+            <div id="generatedCSSContainer">
+                <h3>CSS generado:</h3>
+                <button onclick="copyToClipboard('generatedCSS')">Copiar CSS</button>
+                <pre id="generatedCSS"></pre>
+            </div>
+        </div>
+    
+    
+    <div id="generatedCodeContainer">
+        <div id="generatedJsContainer">
+            <h3>JavaScript generado:</h3>
+            <button onclick="copyToClipboard('generateJavaScript')">Copiar JavaScript</button>
+            <pre id="generateJavaScript"></pre>
+        </div>
+    </div>
+    
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+</body>
+</html>
